@@ -71,7 +71,7 @@
     shouldComponentUpdate: function(newProps, newState) {
       console.log("shouldComponentUpdate: Should component update?");
 
-      if (newState.count < 5) {
+      if (newState.count < 10) {
         console.log("shouldComponentUpdate: component should update!");
         return true;
       } else {
