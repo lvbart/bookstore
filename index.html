@@ -84,9 +84,9 @@
         <div className="todoListMain">
           <div className="header">
             <form onSubmit={this.addItem}>
-              <input ref={(a) => this._inputElement = a} placeholder="写点啥">
+              <input ref={(a) => this._inputElement = a} placeholder="说出你的小秘密">
               </input>
-              <button type="submit">add</button>
+              <button type="submit">发布</button>
             </form>
           </div>
           <TodoItems entires={this.state.items} />
