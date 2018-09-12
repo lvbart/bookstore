@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>React!</title>
+  <script src="https://unpkg.com/react@15.3.2/dist/react.js"></script>
+  <script src="https://unpkg.com/react-dom@15.3.2/dist/react-dom.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js"></script>
+
+  <style> #container {
+    padding: 50px;
+    background-color: #FFF;
+    }
+  </style>
+</head>
+
+
+<body>
+  <div id="container"></div>
+  <script type="text/babel">
+  var destination = document.querySelector("#container");
+
+  var Counter = React.createClass({
+    render: function () {
+      var textStyle = {
+        fontSize: 72,
+        fontFamily: "sans-serif",
+        color: "#333",
+        fontWeight: "bold"
+      };
+
+      return (
+        <div style={textStyle}>
+          {this.props.display}
+        </div>
+      );
+    }
+  });
+
+  var CounterParent = React.createClass({
+    getDefaultProps: function() {
+      console.log("getDefaultProps: Default prop time!");
+      return {};
+    },
+    getInitialState: function() {
+      console.log("getInitialState: Default state time!");
+      return {
+        count: 0
+      };
+    },
+    increase: function () {
+      this.setState({
+        count: this.state.count + 1
+      });
+    },
+    componentWillUpdate: function(newProps, newState) {
+      console.log("componentWillUpdate: Componet is about to update!");
+    },
+    componentDidUpdate: function(currentProps, currentState) {
+      console.log("componentDidUpdate: Componet just updated!");
+    },
+    componentWillMount: function() {
+      console.log("componentWillMount: Component is about to mount!");
+    },
+    componentDidMount: function() {
+      console.log("componentDidMount: Component just mounted!");
+    },
+    componentWillUnmount:function() {
+      console.log("componentWillUnmount: Component is about to removed from the DOM!");
+    },
+    shouldComponentUpdate: function(newProps, newState) {
+      console.log("shouldComponentUpdate: Should component update?");
+
+      if (newState.count < 5) {
+        console.log("shouldComponentUpdate: component should update!");
+        return true;
+      } else {
+        ReactDOM.unmountComponentAtNode(destination);
+        console.log("shouldComponentUpdate: Component should not update!");
+        return false;
+      }
+    },
+    componentWillReceiveProps: function(newProps) {
+      console.log("componentWillReceiveProps: Component will get new props!");
+    },
+    render: function() {
+      var backgroundStyle = {
+        padding: 50,
+        backgroundColor: "#FFC53A",
+        width: 250,
+        height: 100,
+        borderRadius: 10,
+        textAlign: "center"
+      };
+
+      return (
+        <div style={backgroundStyle}>
+          <Counter display={this.state.count} />
+          <button onClick={this.increase}>+ Fang</button>
+        </div>
+      );
+    }
+  });
+
+  ReactDOM.render(
+    <div>
+      <CounterParent/>
+    </div>,
+    destination
+  );
+  </script>
+
+
+</body>
+</html>
