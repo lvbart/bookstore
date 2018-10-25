@@ -74,17 +74,72 @@
         lineHeight: "6px"
       };
 
+
+      var TodoList = React.createClass({
+        getInitialState: function() {
+          return {
+            items: []
+          };
+        },
+        addItem: function (e) {
+          var itemArray = this.state.items;
+
+          itemArray.push(
+            {
+              text: this._inputElement.value,
+              key: Date.now()
+            }
+          );
+
+          this.setState({
+            items: itemArray
+          });
+          this._inputElement.value = "";
+
+          e.preventDefault();
+        },
+
+        render: function() {
+          return (
+            <div className="todoListMain">
+              <div className="header">
+                <form onSubmit={this.addItem}>
+                  <input ref={(a) => this._inputElement = a} placeholder="enter task">
+                  </input>
+                  <button type="submit">add</button>
+                </form>
+              </div>
+              <TodoItems entires={this.state.items} />
+            </div>
+          );
+        }
+      });
+
+      var TodoItems = React.createClass({
+        render: function() {
+          var todoEntries = this.props.entires;
+
+          function createTasks(item) {
+            return <li key={item.key}>{item.text}</li>
+          }
+
+          var listItems = todoEntries.map(createTasks);
+
       return (
         <div style={backgroundStyle}>
           <Counter display={this.state.count} />
           <button onClick={this.increase} style={buttonStyle}>Click</button>
         </div>
+        <ul className="theList">
+          {listItems}
+        </ul>
       );
     }
   });
 
   ReactDOM.render(
     <div>
+      <TodoList/>
       <CounterParent/>
     </div>,
     destination
@@ -94,4 +149,5 @@
 
 </body>
 </html>
+
 
