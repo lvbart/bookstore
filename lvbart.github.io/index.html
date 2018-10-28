@@ -71,10 +71,7 @@
           var listItems = todoEntries.map(createTasks);
 
       return (
-        <div style={backgroundStyle}>
-          <Counter display={this.state.count} />
-          <button onClick={this.increase} style={buttonStyle}>Click</button>
-        </div>
+ 
         <ul className="theList">
           {listItems}
         </ul>
@@ -85,7 +82,6 @@
   ReactDOM.render(
     <div>
       <TodoList/>
-      <CounterParent/>
     </div>,
     destination
   );
