@@ -1,98 +1,54 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-  <title>击</title>
+  <title>login</title>
   <script src="https://unpkg.com/react@15.3.2/dist/react.js"></script>
   <script src="https://unpkg.com/react-dom@15.3.2/dist/react-dom.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js"></script>
 
-  <style> #container {
+  <style>
+  body {
     padding: 50px;
-    background-color: #FFF;
-    }
+    background-color: #66CCFF;
+    font-family: sans-serif;
+  }
+  #office {
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #FFF;
+  }
+
+  #passwordNo {
+    color: #333;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+  }
+
   </style>
 </head>
 
-
 <body>
-  <div id="container"></div>
-  <script type="text/babel">
-  var destination = document.querySelector("#container");
 
-  var Counter = React.createClass({
-    render: function () {
-      var textStyle = {
-        fontSize: 272,
-        fontFamily: "sans-serif",
-        color: "#333",
-        fontWeight: "bold"
-      };
-
-      return (
-        <div style={textStyle}>
-          {this.props.display}
+<div class="login-center">
+  <div class="login-left">
+    <span style="font-size: 32px; margin: 21px 0;">请登录</span>
+  </div>
+  <div class="login-right">
+    <div class="login-signIn-con-left">
+        <div class="login-signIn-card-no">
+            <input class="input-office" type="text" id="office" onclick="" placeholder="请输入三字代码" maxlength="3">
         </div>
-      );
-    }
-  });
-
-  var CounterParent = React.createClass({
-    getInitialState: function() {
-      return {
-        count: 0
-      };
-    },
-    increase: function(e) {
-      var currentCount = this.state.count;
-      if (e.shiftKey) {
-        currentCount += 10;
-      } else {
-        currentCount += 1;
-      }
-      this.setState({
-        count: currentCount
-      });
-    },
-    render: function() {
-      var backgroundStyle = {
-        padding: 150,
-        backgroundColor: "#FFC53A",
-        width: 550,
-        height: 400,
-        borderRadius: 20,
-        textAlign: "center"
-      };
-
-      var buttonStyle = {
-        fontSize: "5em",
-        width: 330,
-        height: 330,
-        fontFamily: "sans-serif",
-        color: "#333",
-        fontWeight: "bold",
-        lineHeight: "6px"
-      };
-
-      return (
-        <div style={backgroundStyle}>
-          <Counter display={this.state.count} />
-          <button onClick={this.increase} style={buttonStyle}>Click</button>
+        <div class="login-signIn-password">
+            <input class="input-signIn-password" id="passwordNo" type="password" placeholder="请输登录密码" maxlength="6">
         </div>
-      );
-    }
-  });
-
-  ReactDOM.render(
-    <div>
-      <CounterParent/>
-    </div>,
-    destination
-  );
-  </script>
-
+    </div>
+    <div class="login-signIn-con-right">
+        <button type="button" class="btn btn-signIn">登录</button>
+    </div>
+  </div>
+</div>
 
 </body>
+
 </html>
-
-
