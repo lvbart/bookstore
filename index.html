@@ -1,281 +1,57 @@
-<html lang="zh-CN"><head>
+<head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
 
-    <title>样本网站</title>
+    <title>Signin Template for Bootstrap</title>
 
     <!-- Bootstrap core CSS -->
     <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
 
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="../../assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="signin.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
   </head>
 
-  <body>
+<body>
 
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <a class="navbar-brand" href="#">快报</a>
+    <div class="container">
+
+      <form class="form-signin">
+        <h2 class="form-signin-heading">Please sign in</h2>
+        <label for="inputEmail" class="sr-only">Email address</label>
+        <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required="" autofocus="">
+        <label for="inputPassword" class="sr-only">Password</label>
+        <input type="password" id="inputPassword" class="form-control" placeholder="Password" required="">
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" value="remember-me"> Remember me
+          </label>
         </div>
-        <div id="navbar" class="navbar-collapse collapse">
-          <ul class="nav navbar-nav navbar-right">
-            <li><a href="#">总览</a></li>
-            <li><a href="#">设置</a></li>
-            <li><a href="#">反馈</a></li>
-          </ul>
-        </div>
-      </div>
-    </nav>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+      </form>
 
-    <div class="container-fluid">
-      <div class="row">
-        <div class="table-responsive">
-            <table class="table table-striped">
-              <thead>
-                <tr>
-                  <th>序号</th>
-                  <th>项目</th>
-                  <th>金额（外币元）</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>1、</td>
-                  <td>退税</td>
-                  <td>
-                    <form id="taxrefund" method="post">
-                      <input type="number" placeholder="请输入金额"></input>
-                    </form>
-                  </td>
-                </tr>
-                <tr>
-                  <td>2、</td>
-                  <td>联旅费</td>
-                  <td>
-                    <form>
-                      <input type="number" placeholder="请勿输入金额"></input>
-                    </form>
-                  </td>
-                </tr>
-                <tr>
-                  <td>3、</td>
-                  <td>非正常航班赔偿</td>
-                  <td>
-                    <form id="flightDev" method="post">
-                      <input type="number" placeholder="请输入金额"></input>
-                    </form>
-                  </td>
-                </tr>
-                <tr>
-                  <td>4、</td>
-                  <td>外籍乘务员劳务费</td>
-                  <td>
-                    <form id="crewSalary" method="post">
-                      <input type="number" placeholder="请输入金额"></input>
-                    </form>
-                  </td>
-                </tr>
-                <tr>
-                  <td>5、</td>
-                  <td>工资性支出</td>
-                  <td>
-                    <form id="salary" method="post">
-                      <input type="number" placeholder="请勿输入金额"></input>
-                    </form>
-                  </td>
-                </tr>
-                <tr>
-                  <td>6、</td>
-                  <td>租赁费</td>
-                  <td>
-                    <form id="rent" method="post">
-                      <input type="number" placeholder="请输入金额"></input>
-                    </form>
-                  </td>
-                </tr>
-                <tr>
-                  <td>7、</td>
-                  <td>交际费</td>
-                  <td>
-                    <form id="entertainment" method="post">
-                      <input type="number" placeholder="请输入金额"></input>
-                    </form>
-                  </td>
-                </tr>
-                <tr>
-                  <td>8、</td>
-                  <td>保险费</td>
-                  <td>
-                    <form id="insurance" method="post">
-                      <input type="number" placeholder="请输入金额"></input>
-                    </form>
-                  </td>
-                </tr>
-                <tr>
-                  <td>9、</td>
-                  <td>税金</td>
-                  <td>
-                    <form id="tax" method="post">
-                      <input type="number" placeholder="请输入金额"></input>
-                    </form>
-                  </td>
-                </tr>
-                <tr>
-                  <td>10、</td>
-                  <td>物业管理费</td>
-                  <td>
-                    <form id="utility" method="post">
-                      <input type="number" placeholder="请输入金额"></input>
-                    </form>
-                  </td>
-                </tr>
-                <tr>
-                  <td>11、</td>
-                  <td>BSP/CASS</td>
-                  <td>
-                    <form id="bspcass" method="post">
-                      <input type="number" placeholder="请输入金额"></input>
-                    </form>
-                  </td>
-                </tr>
-                <tr>
-                  <td>12、</td>
-                  <td>律师、会计师费</td>
-                  <td>
-                    <form id="lawyerAccountant" method="post">
-                      <input type="number" placeholder="请输入金额"></input>
-                    </form>
-                  </td>
-                </tr>
-                <tr>
-                  <td>13、</td>
-                  <td>系统使用维护费</td>
-                  <td>
-                    <form id="systemMaintenance" method="post">
-                      <input type="number" placeholder="请输入金额"></input>
-                    </form>
-                  </td>
-                </tr>
-                <tr>
-                  <td>14、</td>
-                  <td>维修费</td>
-                  <td>
-                    <form id="repair" method="post">
-                      <input type="number" placeholder="请输入金额"></input>
-                    </form>
-                  </td>
-                </tr>
-                <tr>
-                  <td>14.1、</td>
-                  <td>一般车辆日常维修</td>
-                  <td>
-                    <form id="repairCar" method="post">
-                      <input type="number" placeholder="请输入金额"></input>
-                    </form>
-                  </td>
-                </tr>
-                <tr>
-                  <td>14.2、</td>
-                  <td>设备日常维修</td>
-                  <td>
-                    <form id="repairDevice" method="post">
-                      <input type="number" placeholder="请输入金额"></input>
-                    </form>
-                  </td>
-                </tr>
-                <tr>
-                  <td>14.3、</td>
-                  <td>房屋及附属设施日常维修</td>
-                  <td>
-                    <form id="repairFacility" method="post">
-                      <input type="number" placeholder="请输入金额"></input>
-                    </form>
-                  </td>
-                </tr>
-                <tr>
-                  <td>15.1、</td>
-                  <td>差旅费</td>
-                  <td>
-                    <form id="travel" method="post">
-                      <input type="number" placeholder="请输入金额"></input>
-                    </form>
-                  </td>
-                </tr>
-                <tr>
-                  <td>15.2、</td>
-                  <td>通讯费</td>
-                  <td>
-                    <form id="tele" method="post">
-                      <input type="number" placeholder="请输入金额"></input>
-                    </form>
-                  </td>
-                </tr>
-                <tr>
-                  <td>15.3、</td>
-                  <td>办公费</td>
-                  <td>
-                    <form id="officeSypply" method="post">
-                      <input type="number" placeholder="请输入金额"></input>
-                    </form>
-                  </td>
-                </tr>
-                <tr>
-                  <td>15.4、</td>
-                  <td>地面运输费</td>
-                  <td>
-                    <form id="transportation" method="post">
-                      <input type="number" placeholder="请输入金额"></input>
-                    </form>
-                  </td>
-                </tr>
-                <tr>
-                  <td>15.5、</td>
-                  <td>能源费</td>
-                  <td>
-                    <form id="energy" method="post">
-                      <input type="number" placeholder="请输入金额"></input>
-                    </form>
-                  </td>
-                </tr>
-                <tr>
-                  <td>15.6、</td>
-                  <td>其他</td>
-                  <td>
-                    <form id="others" method="post">
-                      <input type="number" placeholder="请输入金额"></input>
-                    </form>
-                  </td>
-                </tr>
-                <tr>
-                  <td>16、</td>
-                  <td>低值易耗品摊销</td>
-                  <td>
-                    <form id="lowcost" method="post">
-                      <input type="number" placeholder="请输入金额"></input>
-                    </form>
-                  </td>
-                </tr>
-                <tr>
-                  <td>17、</td>
-                  <td>服务外包费</td>
-                  <td>
-                    <form id="outsourcing" method="post">
-                      <input type="number" placeholder="请输入金额"></input>
-                    </form>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        <button class="btn btn-lg btn-primary btn-block" type="submit">提交</button>
-        </div>
-      </div>
-    </div>
+    </div> <!-- /container -->
 
 
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
-
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+  
 
 </body>
-
-</html>
