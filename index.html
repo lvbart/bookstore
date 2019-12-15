@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <link rel="stylesheet" href="./dist/style.css">
+      <title>Sample Report</title>
+      <script src="https://gw.alipayobjects.com/os/lib/antv/g2/3.4.10/dist/g2.min.js"></script>
+</head>
+<body class="bg-blue-700">
+      <!--clone from coin base-->
+<div class="font-sans bg-grey-lighter flex flex-col min-h-screen">
+      <!--header-->
+      <div>
+            <div class="bg-blue-dark">
+                <div class="container mx-auto px-4">
+                  <div class="flex items-center md:justify-between py-4">
+                    <div class="w-1/2 md:w-auto text-center text-white text-2xl font-medium">
+                      营业部季度短评
+                    </div>
+                    <div class="w-1/4 md:w-auto md:flex text-right">
+                      <div>
+                        <img class="inline-block h-10 w-10 rounded-full" src="./dist/img/Jackson-Wang-MIRRORS.jpg" alt="">
+                      </div>
+                      <div class="hidden md:block md:flex md:items-center ml-2">
+                        <span class="text-blue-200 text-lg mr-1">Lv</span>                    
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            </div>         
+      </div>
+      <!--main part-->
+      <div class="flex-grow container mx-auto sm:px-4 pt-6 pb-8">
+            <!--summary-->
+            <div class="bg-white border-t border-b sm:border-l sm:border-r sm:rounded shadow mb-6">
+                <div class="border-b-2 px-6">
+                  <div class="flex justify-between -mb-px">
+                    <div class="lg:hidden text-blue-dark py-4 text-lg">
+                      整体情况
+                    </div>
+                    <div class="hidden lg:flex">
+                      <div class="py-4 text-lg border-b ml-4">整体情况</div>
+                    </div>
+                    <!--other metric-->
+                    <div class="flex text-xl">
+                      <button type="button" class="appearance-none py-4 text-grey-dark border-b border-transparent hover:border-grey-dark mr-3">
+                              同比
+                      </button>
+                      <button type="button" class="appearance-none py-4 text-grey-dark border-b border-transparent hover:border-grey-dark mr-3">
+                              环比
+                      </button>
+                      <button type="button" class="appearance-none py-4 text-grey-dark border-b border-transparent hover:border-grey-dark">
+                              全部时期
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <div class="flex items-center px-6 lg:hidden">
+                  <div class="flex-grow flex-no-shrink py-6">
+                    <div class="text-grey-darker mb-2">
+                      <span class="text-3xl align-top">成本</span>
+                      <span class="text-5xl">211,404</span>
+                      <span class="text-blue-200 align-top">CNY万元</span>
+                    </div>
+                    <div class="text-green-light text-sm">
+                      &uarr; 同比12,955.35 (154.16%)
+                    </div>
+                  </div>
+                  <div class="flex-shrink w-32 inline-block relative">
+                    <select class="block appearance-none w-full bg-white border border-grey-light px-4 py-2 pr-8 rounded">
+                                  <option>收入</option>
+                                  <option>产投比</option>
+                                  <option></option>
+                                </select>
+                    <div class="pointer-events-none absolute pin-y pin-r flex items-center px-2 text-grey">
+                      
+                    </div>
+                  </div>
+                </div>
+                <!--summary three items-->
+                <div class="hidden lg:flex">
+                  <!--Revenue-->
+                  <div class="w-1/3 text-center py-8">
+                    <div class="border-r">
+                      <div class="text-grey-darker mb-2">
+                        <span class="text-3xl align-top">收入</span>
+                        <span class="text-5xl">21,404</span>
+                        <span class="text-3xl align-top"></span>
+                      </div>
+                      <div class="text-sm uppercase text-grey tracking-wide">
+                        同比上涨3%
+                      </div>
+                    </div>
+                  </div>
+                  <!--Cost-->
+                  <div class="w-1/3 text-center py-8">
+                    <div class="border-r">
+                      <div class="text-grey-darker mb-2">
+                        <span class="text-3xl align-top">成本</span>
+                        <span class="text-5xl">1,982</span>
+                        <span class="text-3xl align-top"></span>
+                      </div>
+                      <div class="text-sm uppercase text-grey tracking-wide">
+                        同比下降0.3%
+                      </div>
+                    </div>
+                  </div>
+                  <!--ROI-->
+                  <div class="w-1/3 text-center py-8">
+                    <div>
+                      <div class="text-grey-darker mb-2">
+                        <span class="text-3xl align-top"><span class="text-green align-top"></span>产投比</span>
+                        <span class="text-5xl">5.47</span>
+                        <span class="text-3xl align-top"></span>
+                      </div>
+                      <div class="text-sm uppercase text-grey tracking-wide">
+                        同比下降2.3%
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+            <!--details-->
+            <div class="flex flex-wrap -mx-4">
+            <!--left canvas-->
+                <div class="w-full mb-6 lg:mb-0 lg:w-1/2 px-4 flex flex-col">
+                  <div class="flex-grow flex flex-col bg-white border-t border-b sm:rounded sm:border shadow overflow-hidden">
+                    <div class="border-b">
+                      <div class="flex justify-between px-6 -mb-px">
+                        <h3 class="text-blue-dark py-4 font-normal text-lg">成本分项目展示</h3>
+                        <div class="flex">
+                          <button type="button" class="appearance-none py-4 text-blue-dark border-b border-blue-dark mr-3">
+                              列表展示
+                          </button>
+                          <button type="button" class="appearance-none py-4 text-grey-dark border-b border-transparent hover:border-grey-dark">
+                              图表展示
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="flex-grow flex px-6 py-6 text-grey-darker items-center border-b -mx-4">
+                      <div class="w-2/5 xl:w-1/4 px-4 flex items-center">
+                        航延                      
+                      </div>
+                      <div class="hidden md:flex lg:hidden xl:flex w-1/4 px-4 items-center">
+                        <div class="bg-orange h-2 rounded-full flex-grow mr-2"></div>
+                        同比上涨30%
+                      </div>
+                      <div class="flex w-3/5 md:w/12">
+                        <div class="w-1/2 px-4">
+                          <div class="text-right">
+                            4,036.26 万元
+                          </div>
+                        </div>
+                        <div class="w-1/2 px-4">
+                          <div class="text-right text-grey">
+                            2,825.38 万元
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="flex-grow flex px-6 py-6 text-grey-darker items-center border-b -mx-4">
+                      <div class="w-2/5 xl:w-1/4 px-4 flex items-center">
+                        
+                        <span class="text-lg">薪酬</span>
+                      </div>
+                      <div class="hidden md:flex lg:hidden xl:flex w-1/4 px-4 items-center">
+                        <div class="bg-grey h-2 w-2 rounded-full mr-2"></div>
+                        同比上涨8%
+                      </div>
+                      <div class="flex w-3/5 md:w/12">
+                        <div class="w-1/2 px-4">
+                          <div class="text-right">
+                            43,295.65 万元
+                          </div>
+                        </div>
+                        <div class="w-1/2 px-4">
+                          <div class="text-right text-grey">
+                            39,831.99 万元
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="flex-grow flex px-6 py-6 text-grey-darker items-center border-b -mx-4">
+                      <div class="w-2/5 xl:w-1/4 px-4 flex items-center">
+                        
+                        <span class="text-lg">税金</span>
+                      </div>
+                      <div class="hidden md:flex lg:hidden xl:flex w-1/4 px-4 items-center">
+                        <div class="bg-indigo h-2 w-2 rounded-full mr-2"></div>
+                        同比下降2%
+                      </div>
+                      <div class="flex w-3/5 md:w/12">
+                        <div class="w-1/2 px-4">
+                          <div class="text-right">
+                            8,296.45 万元
+                          </div>
+                        </div>
+                        <div class="w-1/2 px-4">
+                          <div class="text-right text-grey">
+                            8,462.38 万元
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="px-6 py-4">
+                      <div class="text-center text-grey">
+                        成本总计
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            <!--right canvas-->
+                <div class="w-full lg:w-1/2 px-4">
+                  <div class="bg-white border-t border-b sm:rounded sm:border shadow">
+                    <div class="border-b">
+                      <div class="flex justify-between px-6 -mb-px">
+                        <h3 class="text-blue-dark py-4 font-normal text-lg">成本分区域展示</h3>
+                      </div>
+                    </div>
+                    <div>
+                      <div class="text-center px-6 py-4">
+                        <div class="py-8">
+                          <div class="mb-4">
+                              <div id="costByRegions">
+                             </div></div>
+                          </div>
+                          <p class="text-2xl text-grey-darker font-medium mb-4">2019年成本分区域展示</p>
+                          <p class="text-grey max-w-xs mx-auto mb-6">整体来看，预算完成情况基本稳定，但部分区域航延及保险费用超支明显，需要引起注意。</p>
+                          <div>
+                            <button type="button" class="bg-blue hover:bg-blue-dark text-white border border-blue-dark rounded px-6 py-4">继续阅读</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+      </div>
+
+      <!--footer-->
+      <div class="bg-white border-t">
+              <div class="container mx-auto px-4">
+                <div class="md:flex justify-between items-center text-sm">
+                  <div class="text-center md:text-left py-3 md:py-4 border-b md:border-b-0">
+                    <a href="#" class="no-underline text-grey-dark mr-4">主页</a>
+                    <a href="#" class="no-underline text-grey-dark mr-4">资源</a>
+                    <a href="#" class="no-underline text-grey-dark">隐私声明</a>
+                  </div>
+                  <div class="md:flex md:flex-row-reverse items-center py-4">
+                    <div class="text-center mb-4 md:mb-0 md:flex">
+                      <div class="w-48 inline-block relative mb-4 md:mb-0 md:mr-4">
+                        <select class="leading-tight block appearance-none w-full bg-white border border-grey-light px-3 py-2 pr-8 rounded">
+                                          <option>English</option>
+                                        </select>
+                        <div class="pointer-events-none absolute pin-y pin-r flex items-center px-2 text-grey">
+                          
+                        </div>
+                      </div>
+                      <div>
+                        <a href="#" class="inline-block leading-tight bg-blue border border-blue-dark hover:bg-blue-dark px-3 py-2 text-white no-underline rounded">意见反馈</a>
+                      </div>
+                    </div>
+                    <div class="text-grey text-center md:mr-4">&copy; 2019 Lv</div>
+                  </div>
+                </div>
+              </div>
+      </div>
+</div>      
+<script>
+      const dataByRegions = [
+        { area: '北美大区', cost: 3608 },
+        { area: '亚洲其他地区', cost: 2824 },
+        { area: '韩国地区', cost: 851 },
+        { area: '日本大区', cost: 2462 },
+        { area: '澳新地区', cost: 993 },
+        { area: '欧洲大区', cost: 6481 }
+      ]; 
+      // G2 对数据源格式的要求，仅仅是 JSON 数组，数组的每个元素是一个标准 JSON 对象。
+      // Step 1: 创建 Chart 对象
+      const chart = new G2.Chart({
+        container: 'costByRegions', // 指定图表容器 ID
+        width : 800, // 指定图表宽度
+        height : 600, // 指定图表高度
+        forceFit: true //自动调整大小
+      });
+      // Step 2: 载入数据源
+      chart.source(dataByRegions);
+      // Step 3：创建图形语法，绘制柱状图，由 area 和 cost 两个属性决定图形位置，area 映射至 x 轴，cost 映射至 y 轴
+      chart.interval().position('area*cost').color('area')
+      // Step 4: 渲染图表
+      chart.render();
+</script>
+    
+
+
+<script src="https://gw.alipayobjects.com/os/antv/pkg/_antv.data-set-0.10.1/dist/data-set.min.js"></script>
+<script src="https://gw.alipayobjects.com/os/antv/assets/lib/jquery-3.2.1.min.js"></script>
+
+</body>
+
+
+</html>
