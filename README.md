@@ -1,3 +1,4 @@
 # lvbart.github.io
-Lv's page
-This is a showcase website for self learning purpose.
+Bookstore
+* Tech stack: Vue / tailwindcss / 
+* Features: book search / rent / return / recommond
